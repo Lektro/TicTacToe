@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class TicTacToe {
+
     // Class variables in Array lists to keep track of current positions on the game board.
     // This gets used to check the win conditions for the game.
     static ArrayList<Integer> playerPositions = new ArrayList<>();
@@ -21,6 +22,7 @@ public class TicTacToe {
 
         // Loops through player and cpu inputs until on of the win condition is met.
         while(true) {
+
             // Initialises the scanner ready for input.
             Scanner scan = new Scanner(System.in);
 
@@ -94,6 +96,7 @@ public class TicTacToe {
 
         // Declaring first symbol as empty. Once the user gives a valid input this will be switched to the corresponding symbol
         char symbol = ' ';
+
         // Determine and switches between who is placing a piece or symbol, the player or the computer
         // Assigns the correct symbol
         // Adds the player and CPU position to the correct place in the Array
@@ -139,10 +142,13 @@ public class TicTacToe {
             default:
                 break;
         }
+
         // Invoke Method to print the current game board
         printGameBoard(gameBoard);
     }
-    // Adding the positions that would give a win to the Array list
+
+    // Method to check for a winner.
+    // Here we are defining the scope of positions that would give a win
     public static String checkWinner() {
         List topRow = Arrays.asList(1, 2, 3);
         List middleRow = Arrays.asList(4, 5, 6);
@@ -174,8 +180,8 @@ public class TicTacToe {
                 return "Game ended in a Draw!";
             }
         }
+
+        // Empty return unless a winning condition is met.
         return "";
     }
 }
-
-
